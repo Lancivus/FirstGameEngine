@@ -1,42 +1,45 @@
-#include <FirstGameEngine/FirstGameEngine.h>
+#include <myengine/myengine.h>
 
 #include <iostream>
 
-class TestScreen : public FirstGameEngine::Component
+class TestScreen : public myengine::Component
 {
 public:
-	void onInit(std::string color)
-	{
-		//std::cout << "onInit " << color << std::endl;
-	}
+  void onInit(std::string color)
+  {
+    //std::cout << "onInit " << color << std::endl;
+  }
 
-	void onBegin()
-	{
-		//std::cout << "onBegin" << std::endl;
-	}
+  void onBegin()
+  {
+    //std::cout << "onBegin" << std::endl;
+  }
 
-	void onTick()
-	{
-		//std::cout << "onTick" << std::endl;
-	}
+  void onTick()
+  {
+    //std::cout << "onTick" << std::endl;
+  }
 
-	void onDisplay()
-	{
-		//std::cout << "onTick" << std::endl;
-	}
+  void onDisplay()
+  {
+    //std::cout << "onTick" << std::endl;
+  }
 };
 
 int main()
 {
-	std::shared_ptr<FirstGameEngine::Core> c = FirstGameEngine::Core::initialize();
+  std::shared_ptr<myengine::Core> c = myengine::Core::initialize();
 
-	std::shared_ptr<FirstGameEngine::Entity> e = c->addEntity();
+  std::shared_ptr<myengine::Entity> e = c->addEntity();
 
-	std::shared_ptr<TestScreen> ts = e->addComponent<TestScreen>("Green");
-	std::shared_ptr<FirstGameEngine::MeshRenderer> mr = e->addComponent<FirstGameEngine::MeshRenderer>();
-	std::shared_ptr<FirstGameEngine::MeshRenderer> mr2 = e->getComponent<FirstGameEngine::MeshRenderer>();
+  std::shared_ptr<myengine::Sound> s = std::make_shared<myengine::Sound>("dixie_horn.ogg");
+  s->play();
 
-	c->start();
+  std::shared_ptr<TestScreen> ts = e->addComponent<TestScreen>("Green");
+  std::shared_ptr<myengine::MeshRenderer> mr = e->addComponent<myengine::MeshRenderer>();
+  std::shared_ptr<myengine::MeshRenderer> mr2 = e->getComponent<myengine::MeshRenderer>();
 
-	return 0;
+  c->start();
+
+  return 0;
 }
