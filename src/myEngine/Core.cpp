@@ -75,10 +75,20 @@ void Core::start()
 
     while(SDL_PollEvent(&event))
     {
-      if(event.type == SDL_QUIT)
-      {
-        running = false;
-      }
+		switch (event.type)
+		{
+		case SDL_QUIT:
+			running = false;
+			break;
+		case SDL_KEYDOWN:
+
+			switch (event.key.keysym.sym)
+			{
+			case SDLK_SPACE:
+				running = false;
+				break;
+			}
+		}
     }
 
 

@@ -1,0 +1,4 @@
+C:/Users/s4915540/FirstGameEngine/build/CMakeFiles/myengine.dir
+C:/Users/s4915540/FirstGameEngine/build/CMakeFiles/game.dir
+C:/Users/s4915540/FirstGameEngine/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/s4915540/FirstGameEngine/build/CMakeFiles/ZERO_CHECK.dir
